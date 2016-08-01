@@ -30,7 +30,7 @@ getRandomItem = (items) ->
   items[i]
 
 module.exports = (robot) ->
-  robot.hear /(the ([^\s]+) )?(guys|dudes)/i, (res) ->
+  robot.hear /(the ([^\s]+) )?\b(guys|dudes)\b/i, (res) ->
     if res.match[2]
       res.send getRandomItem(SUGGESTIONS) + ' the ' + res.match[2] + ' team instead?'
     else
